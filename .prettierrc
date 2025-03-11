@@ -1,0 +1,11 @@
+{
+	"tabWidth": 2,
+	"useTabs": true,
+	"proseWrap": "always",
+	"quoteProps": "as-needed",
+	"singleAttributePerLine": true,
+	"vueIndentScriptAndStyle": false,
+	"htmlWhitespaceSensitivity": "css",
+	"arrowParens": "always",
+	"bracketSpacing": true
+}
