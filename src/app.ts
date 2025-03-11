@@ -12,11 +12,10 @@ const app = express();
 
 const corsOptions = {
 	origin: FRONTEND_URL,
-	methods: ["GET", "POST", "PUT"],
-	credentials: true,
+	methods: ["GET", "PUT"],
 };
 
-// app.use(cors(corsOptions));
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use("/api", router);
 
