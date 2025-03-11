@@ -6,6 +6,7 @@
 	"scripts": {
 		"start": "npx ts-node src/app.ts",
 		"dev": "npx ts-node-dev --respawn src/app.ts",
+		"build": "echo 'No build step required'",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"author": "",
