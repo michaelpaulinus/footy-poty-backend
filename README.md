@@ -1,1 +1,33 @@
 # footy-poty-backend
+
+Backend for [footy-poty](https://github.com/michaelpaulinus/footy-poty)
+
+## Pre-requisites
+
+- Node.js (v18 or later)
+- npm
+- Vercel account
+
+## Installation
+
+```bash
+npm i
+```
+
+Create a `.env` following the structure of `.env.example`
+
+## Development
+
+To run a development server
+
+```bash
+vercel dev
+```
+
+## Production
+
+To deploy to production server
+
+```bash
+vercel --prod
+```
