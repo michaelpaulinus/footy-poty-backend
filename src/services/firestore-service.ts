@@ -12,6 +12,41 @@ export class FirestoreService {
 		this.firestoreDb = getFirestore(firebaseClient);
 	}
 
+	async createDb() {
+		const leaguesRef = collection(this.firestoreDb, "leagues");
+
+		leagues.forEach(async (league) => {
+			const leagueDocRef = doc(leaguesRef, league.value.toString());
+
+			await setDoc(leagueDocRef, league);
+
+			const seasonsRef = collection(leagueDocRef, "seasons");
+
+			var seasonsData: number[] = await apiSportsService.getSeasons();
+			seasonsData = seasonsData.filter((val: number) => {
+				return val <= new Date().getFullYear() - 1 && val >= 2010;
+			});
+
+			seasonsData.forEach(async (season) => {
+				const seasonDocRef = doc(seasonsRef, season.toString());
+
+				await setDoc(seasonDocRef, { season: season });
+
+				const playerData = await apiSportsService.getTopScorers(
+					season,
+					league.value
+				);
+
+				const playerRef = collection(seasonDocRef, "players");
+
+				playerData.forEach(async (player: any) => {
+					const playerDocRef = doc(playerRef, player.player.id.toString());
+					await setDoc(playerDocRef, player);
+				});
+			});
+		});
+	}
+
 	async addPlayersInSeason(leagueId: number, seasonId: number) {
 		const playerData = await apiSportsService.getTopScorers(seasonId, leagueId);
 
