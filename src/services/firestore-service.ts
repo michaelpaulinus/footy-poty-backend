@@ -92,7 +92,7 @@ export class FirestoreService {
 			}
 		});
 
-		players.splice(5);
+		players.splice(10);
 
 		return players;
 	}
