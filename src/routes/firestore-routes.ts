@@ -17,7 +17,7 @@ router.get(
 );
 
 router.get(
-	"/leagues/:leagueId",
+	"/seasons/:leagueId",
 	asyncHandler(async (req: Request, res: Response) => {
 		const { leagueId } = req.params;
 		const response = await firestoreService.getSeasons(Number(leagueId));
