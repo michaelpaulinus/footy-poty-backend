@@ -5,6 +5,13 @@ import firestoreService from "../services/firestore-service";
 const router = Router();
 
 router.get(
+	"/health",
+	asyncHandler(async (req: Request, res: Response) => {
+		res.sendStatus(200);
+	})
+);
+
+router.get(
 	"/scorers/:seasonId/:leagueId",
 	asyncHandler(async (req: Request, res: Response) => {
 		const { seasonId, leagueId } = req.params;
@@ -29,7 +36,7 @@ router.put(
 	"/stats",
 	asyncHandler(async (req: Request, res: Response) => {
 		await firestoreService.updateLatestSeason();
-		res.status(200).json("Updated successfully");
+		res.sendStatus(200);
 	})
 );
 
