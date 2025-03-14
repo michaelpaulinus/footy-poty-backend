@@ -14,6 +14,10 @@ Backend for [footy-poty](https://github.com/michaelpaulinus/footy-poty)
 npm i
 ```
 
+```bash
+npm i -g vercel
+```
+
 Create a `.env` following the structure of `.env.example`
 
 ## Development
