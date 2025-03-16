@@ -4,8 +4,9 @@ Backend for [footy-poty](https://github.com/michaelpaulinus/footy-poty)
 
 ## Pre-requisites
 
-- Node.js (v18 or later)
+- Node.js (v20 or later)
 - npm
+- Firebase account
 - Vercel account
 
 ## Installation
